@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To Do list</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <section id="main">
+        <h1 id="title">Start Up Your Journey</h1>
+        <hr class="sep" />
+        <br />
+        <h3 class="para">
+          Organising Yourself is very important in our daily live and it's a key
+          for success.
+          <br /><br />
+          Start up your journey with all your task needed to keep your time
+          consistent.
+        </h3>
+        <br />
+        <br />
+        <div class="button">
+          <a
+            class="sign-up"
+            href="##"
+            onclick="navigatePages('signup'); return false;"
+            >Sign Up</a
+          >
+          <a
+            class="sign-in"
+            href="##"
+            onclick="navigatePages('signin'); return false;"
+            >Sign In</a
+          >
+        </div>
+      </section>
+      <section id="signup-page">
+        <h2>Sign Up!</h2>
+        <div class="signup-form">
+          <form name="sign-up" id="signUpForm">
+            <ul class="form">
+              <li>
+                <label>First Name<span class="required"></span></label>
+                <input type="text" name="fname" placeholder="Your First Name" />
+              </li>
+              <li>
+                <label>Last Name<span class="required"></span></label>
+                <input type="text" name="lname" placeholder="Your Last Name" />
+              </li>
+              <li>
+                <label>Email<span class="required"></span></label>
+                <input type="email" name="email" placeholder="Your Email" />
+              </li>
+              <li>
+                <label>Password<span class="required"></span></label>
+                <input type="password" name="password" placeholder="Password" />
+              </li>
+              <li>
+                <label>Confirm Password<span class="required"></span></label>
+                <input
+                  type="password"
+                  name="confirmpassword"
+                  placeholder="Confirm Password"
+                />
+              </li>
+              <li>
+                <input type="checkbox" name="T&Cs" value="AGREE" />
+                <label
+                  >I agree to the Terms of Use<span class="required"></span
+                ></label>
+              </li>
+              <li>
+                <input type="submit" value="Submit" />
+              </li>
+              <li class="required-mssg">
+                <span class="required">All fields must be filled!</span>
+              </li>
+              <li class="confirm-mssg">
+                <span class="required"
+                  >wrong details Please check your email and password
+                  formats.<br />You need a valid email that has not been
+                  submitted before.<br />Password must 6-20 characters long with
+                  atleast<br />1 uppercase letter, 1 lowercase letter and 1
+                  number.</span
+                >
+              </li>
+            </ul>
+          </form>
+        </div>
+      </section>
+      <section id="signin-page">
+        <h2>Sign In!</h2>
+        <div class="signin-form">
+          <form name="sign-in" id="signInForm">
+            <ul class="form-signin">
+              <li>
+                <label>Email<span class="required"></span></label>
+                <input type="email" name="email" placeholder="Your Email" />
+              </li>
+              <li>
+                <label>Password<span class="required"></span></label>
+                <input type="password" name="password" placeholder="Password" />
+              </li>
+              <li>
+                <input type="submit" value="Login" />
+              </li>
+              <li class="required-mssg">
+                <span class="required">All fields must be filled!</span>
+              </li>
+              <li class="confirm-mssg">
+                <span class="required"
+                  >Wrong email or password Please try again.</span
+                >
+              </li>
+            </ul>
+          </form>
+        </div>
+      </section>
+      <section id="dashboard">
+        <h2>Dashboard</h2>
+        <nav>
+          <ul>
+            <li>
+              <button
+                id="clear-list"
+                type="button"
+                name="clear-list"
+                onclick="gotoEdit(); return false;"
+              >
+                Edit Account
+              </button>
+            </li>
+            <li>
+              <button
+                id="clear-list"
+                type="button"
+                name="clear-list"
+                onclick="clearDashboard(); return false;"
+              >
+                Clear Dashboard
+              </button>
+            </li>
+            <li>
+              <button
+                id="clear-list"
+                type="button"
+                name="clear-list"
+                onclick="location.reload(); return false;"
+              >
+                Sign Out
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="dashboard-form">
+          <form id="dash-form" name="dash-form">
+            <input
+              type="text"
+              id="list-title"
+              name="list-title"
+              placeholder="Add Your To Do Task"
+            />
+            <input type="submit" value="Create" />
+          </form>
+        </div>
+        <div id="todo-dash"></div>
+      </section>
+      <section id="edit-account">
+        <h2>Edit Account</h2>
+        <div class="signup-form">
+          <form name="edit-acc" id="edit-acc">
+            <ul class="form">
+              <li>
+                <label>First Name<span class="required"></span></label>
+                <input type="text" name="fname" placeholder="Your First Name" />
+              </li>
+              <li>
+                <label>Last Name<span class="required"></span></label>
+                <input type="text" name="lname" placeholder="Your Last Name" />
+              </li>
+              <li>
+                <label>Email<span class="required"></span></label>
+                <input type="email" name="email" placeholder="Your Email" />
+              </li>
+              <li>
+                <label>Password<span class="required"></span></label>
+                <input type="password" name="password" placeholder="Password" />
+              </li>
+              <li>
+                <label>Confirm Password<span class="required"></span></label>
+                <input
+                  type="password"
+                  name="confirmpassword"
+                  placeholder="Confirm Password"
+                />
+              </li>
+              <li>
+                <input type="submit" value="Edit" />
+              </li>
+              <li class="required-mssg">
+                <span class="required">All fields must be filled!</span>
+              </li>
+              <li class="confirm-mssg">
+                <span class="required"
+                  >Please check your email and password formats.<br />You need a
+                  valid email that has not been submitted before.<br />Password
+                  must 6-20 characters long with atleast<br />1 uppercase
+                  letter, 1 lowercase letter and 1 number.</span
+                >
+              </li>
+            </ul>
+          </form>
+        </div>
+        <a class="edit" href="#" onclick="location.reload(); return false;"
+          >Sign Out</a
+        >
+        <a
+          class="edit"
+          href="#"
+          onclick="navigatePages('dashboard'); resetEdit(); return false;"
+          >Back To Dashboard</a
+        >
+        <a class="edit" href="#" onclick="confirmDelete(); return false;"
+          >Delete Account</a
+        >
+      </section>
+      <section id="edit-list">
+        <h2 id="header-title"></h2>
+        <nav>
+          <ul>
+            <li>
+              <button
+                id="list-nav"
+                type="button"
+                name="clear-list"
+                onclick="deleteTodo(); return false;"
+              >
+                Delete
+              </button>
+            </li>
+            <li>
+              <button
+                id="list-nav"
+                type="button"
+                name="clear-list"
+                onclick="clearList(); return false;"
+              >
+                Clear List
+              </button>
+            </li>
+            <li>
+              <button
+                id="list-nav"
+                type="button"
+                name="clear-list"
+                onclick="navigatePages('dashboard'); clearView(); return false;"
+              >
+                Back to Dashboard
+              </button>
+            </li>
+            <li>
+              <button
+                id="list-nav"
+                type="button"
+                name="clear-list"
+                onclick="clearView(); gotoEdit(); return false;"
+              >
+                Edit Account
+              </button>
+            </li>
+            <li>
+              <button
+                id="list-nav"
+                type="button"
+                name="clear-list"
+                onclick="changeTitle(); return false;"
+              >
+                Change The Title Of Your Task
+              </button>
+            </li>
+            <li>
+              <button
+                id="list-nav"
+                type="button"
+                name="clear-list"
+                onclick="location.reload(); return false;"
+              >
+                Sign Out
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div class="dashboard-form">
+          <form id="list-form" name="list-form">
+            <input
+              type="text"
+              id="list-element"
+              name="list-element"
+              placeholder="Add To List"
+            />
+            <input type="submit" value="Create New" />
+          </form>
+        </div>
+        <div id="todo-list">
+          <ol class="list-class"></ol>
+        </div>
+      </section>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
